@@ -2,7 +2,10 @@
   "name": "chatterbox",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "~2.0.3"
+    "jquery": "~2.0.3",
+    "underscore": "~1.8.3",
+    "bootstrap": "~3.3.5",
+    "moment": "~2.10.3"
   },
   "ignore": [
     "**/.*",
