@@ -19,27 +19,34 @@
   <body>
     <div class="container col-md-10">
       <h1>chatterbox</h1>
+      <!--FORM-->
       <div id="sendmessages" class="panel panel-default col-md-12">
           <form id="messageForm">
+
             <div class="form-group col-md-12" >
               <label for="roomname">Room Name</label>
                 <input type="text" id="roomname" required placeholder="Choose your room">
-     </div>
+            </div>
+
             <div class="form-group col-md-12">
               <label for="username">Username</label>
                 <input type="text" id="username" required placeholder="Enter your username">
             </div>
+
             <div class="form-group col-md-12">
               <label for="text">Send a message</label>
               <textarea class="form-control" id="text" rows="3" required placeholder="rightyour"></textarea>
             </div>
 
           <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+          </form><!--END FORM-->
+      <hr>
       </div>
-      <div class="panel panel-default">
+      <!--REFRESH BUTTON-->
+      <div class="panel panel-default col-md-12">
         <button class="btn btn-lg btn-primary" id="refresh">Update Messages </button>
       </div>
+      <!--MESSAGES CONTAINER BEGINS HERE-->
       <div id="messages" class="panel panel-default col-md-12">
         <ul id="mesList" class="list-group"></ul>
       </div>

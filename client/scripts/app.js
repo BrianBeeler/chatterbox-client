@@ -2,38 +2,38 @@
 $(document).ready(function() {
  var messContainer = $("#mesList");
  var baseUrl = 'https://api.parse.com/';
-loadData();
+ loadData();
 
 function loadData(){
  //loading chatterbox messages
- $.ajax({url: baseUrl+'1/classes/chatterbox'
-    })
-    .done(function(data) {
-      //console.log(data.results[12].text)
-      $.each(data.results, function(index,value) {
-        var postData = data.results;
-        if(postData[index].username && postData[index].text && postData[index].roomname) {
-          var date = moment(postData.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")
-
-          var post = $("<li class='list-group-item'>")
-          if (postData[index].roomname === "4chan") {
-              post.css({'background-color': '#afd6ab'})
-            }
-          if (postData[index].roomname === "lobby"){
-              post.css({'background-color': '#eadf88'})
-          }
-          post.append('<small>').text(postData[index].username).append(' in ').text(postData[index].roomname).append('</small>')
-          post.append('<small>').text(date).append('</small>')
-          post.append('<p style="padding:5px;" class="">'+postData[index].text+'</p>')
-          post.append("</li>")
-          messContainer.append(post)
-
-        }//end of check for author and text
+   $.ajax({url: baseUrl+'1/classes/chatterbox'
       })
-    })
-    .fail(function(error) {
-      console.log("error:" + error)
-  });
+      .done(function(data) {
+        //console.log(data.results[12].text)
+        $.each(data.results, function(index,value) {
+          var postData = data.results;
+          if(postData[index].username && postData[index].text && postData[index].roomname) {
+            var date = moment(postData.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a")
+
+            var post = $("<li class='list-group-item'>")
+            if (postData[index].roomname === "4chan") {
+                post.css({'background-color': '#afd6ab'})
+              }
+            if (postData[index].roomname === "lobby"){
+                post.css({'background-color': '#eadf88'})
+            }
+            post.append('<small>'+_.escape(postData[index].username)+ ' in ' + _.escape(postData[index].roomname)+'</small>')
+            post.append('<small>'+date+'</small>')
+            post.append('<p style="padding:5px;" class="">'+_.escape(postData[index].text)+'</p>')
+            post.append("</li>")
+            messContainer.append(post)
+
+          }//end of check for author and text
+        })
+      })
+      .fail(function(error) {
+        console.log("error:" + error)
+    });
   }
 
    //clickhandler for submitting a post
@@ -51,7 +51,6 @@ function loadData(){
     post.text = text;
     //post.createdAt = new Date();
     console.log(post)
-
 
 
     $.ajax({
