@@ -82,3 +82,11 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+
+li {
+    margin-top: 8px;
+    box-shadow: 4px 4px 2px #66B2FF;
+}
+.messagePanel {
+    background-color: #66B2FF;
+}

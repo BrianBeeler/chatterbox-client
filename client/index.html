@@ -5,6 +5,7 @@
     <title>chatterbox</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 
     <!-- dependencies -->
     <script src="bower_components/underscore/underscore-min.js"></script>
@@ -17,38 +18,45 @@
 
   </head>
   <body>
-    <div class="container col-md-10">
+    <div class="container col-md-12">
       <h1>chatterbox</h1>
+    <div class="col-md-6">
       <!--FORM-->
-      <div id="sendmessages" class="panel panel-default col-md-12">
-          <form id="messageForm">
+      <div id="sendmessages" class="messagePanel panel panel-default animated bounceIn col-md-12">
+          <form class="messagePanel" id="messageForm">
 
             <div class="form-group col-md-12" >
               <label for="roomname">Room Name</label>
-                <input type="text" id="roomname" required placeholder="Choose your room">
+                <input class="pull-right" type="text" id="roomname" required placeholder="Choose your room">
             </div>
 
             <div class="form-group col-md-12">
               <label for="username">Username</label>
-                <input type="text" id="username" required placeholder="Enter your username">
+                <input class="pull-right" type="text" id="username" required placeholder="Enter your username">
             </div>
 
             <div class="form-group col-md-12">
-              <label for="text">Send a message</label>
-              <textarea class="form-control" id="text" rows="3" required placeholder="rightyour"></textarea>
+              <textarea class="form-control" id="text" rows="3" required placeholder="Write your message here"></textarea>
             </div>
 
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
           </form><!--END FORM-->
       <hr>
       </div>
+      <div class="col-md-6 pull-left">
+        <form class="form-inline">
+          <label for="roomContainer">Choose a room</label>
+          <select class='form-control' id='roomContainer'> </select>
+        </form>
+      </div>
+    </div>
       <!--REFRESH BUTTON-->
-      <div class="panel panel-default col-md-12">
-        <button class="btn btn-lg btn-primary" id="refresh">Update Messages </button>
+      <div class="panel panel-default col-md-6">
+        <button class="btn btn-md btn-primary" id="refresh">Update Messages </button>
       </div>
       <!--MESSAGES CONTAINER BEGINS HERE-->
-      <div id="messages" class="panel panel-default col-md-12">
-        <ul id="mesList" class="list-group"></ul>
+      <div id="messages" class="col-md-6">
+        <ul class="list-group col-md-12"><span class="pull-left col-md-12" id="mesList"></span></ul>
       </div>
       <!-- Your HTML goes here! -->
     </div>
