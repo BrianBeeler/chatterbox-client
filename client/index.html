@@ -43,12 +43,22 @@
           </form><!--END FORM-->
       <hr>
       </div>
-      <div class="col-md-6 pull-left">
+      <div class="col-md-12 pull-left">
         <form class="form-inline">
           <label for="roomContainer">Choose a room</label>
-          <select class='form-control' id='roomContainer'> </select>
+          <select class='form-control' id='roomContainer'>
+          </select>
         </form>
       </div>
+      <!--Chatroom messages container -->
+      <h4>Friends<h4>
+      <div id="chatRoomMessages" class="panel panel-default col-md-12">
+        <span id='friends'></span>
+      </div>
+      <div id="chatRoomMessages" class="panel panel-default col-md-12">
+        <ul class="list-group col-md-12"><span class="pull-left col-md-12" id="roomMessages"></span></ul>
+      </div>
+
     </div>
       <!--REFRESH BUTTON-->
       <div class="panel panel-default col-md-6">
